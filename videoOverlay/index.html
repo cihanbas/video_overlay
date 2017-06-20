@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<script src="contents/js/jquery-3.1.1.min.js"></script>
+	<!--<script src="contents/js/angular.min.js"></script>-->
+	<script src="contents/js/js.js"></script>
+	<link href="contents/css/style.min.css" rel="stylesheet" />
+	<link href="contents/css/fontIcon/style.css" rel="stylesheet" />
+</head>
+<body ng-app="app" ng-controller="ctrl">
+	<div class="video" >
+		<video id="media" onmouseover="video.showMenu()" onmouseout="video.hideMenu()">
+			<source src="http://media.w3.org/2010/05/bunny/movie.mp4" type="video/mp4" />
+		</video>
+		<div class="video-overlay" >
+			<div class="progress" onclick="video.timeget(event)">
+				<div class="progress-background" >
+					<div class="progress-value" id="progress-value" >
+						<span class="icon-FunctionIcon"></span>
+					</div>
+				</div>
+			</div>
+			<div class="icons" >
+
+
+				<span class="icon-RecordStop" onclick="video.stopPlayer()"></span>
+				<span class="icon-Prev" onclick="video.prevTime(10)"></span>
+				<span class="icon-Play" onclick="video.playPause(this)"></span>
+				<span class="icon-Next" onclick="video.nextTime(10)"></span>
+			</div>
+			
+		</div>
+		<img src="contents/img/ring-alt.svg" id="loaded" />
+	</div>
+
+</body>
+</html>
