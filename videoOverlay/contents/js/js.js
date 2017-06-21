@@ -1,13 +1,12 @@
-﻿class Video {
+class Video {
     constructor(media) {
         this.media = media;
         this.hideTime = 5;
         this.media.ontimeupdate = () => {
             var percentage = Math.floor((100 / this.media.duration) *
                 this.media.currentTime);
-                var person = 'Addy Osmani';
-                console.log('Yo! My name is ${person}!');
-            $("#progress-value").css("width", percentage+"%");
+
+            $("#progress-value").css("width", percentage + "%");
         }
         this.media.onwaiting = () => {
             $("#loaded").css("display", "block");
@@ -47,12 +46,11 @@
     hideMenu() {
         var hideInterVal = setInterval(() => {
             this.hideTime -= 1;
-         
             if (this.hideTime <= 1) {
                 clearInterval(hideInterVal);
                 $(".video-overlay").animate({
                     opacity: 0
-                }, 1000, () => {
+                }, 200, () => {
                     $(".video-overlay").css("display", "none")
                 });
             }
